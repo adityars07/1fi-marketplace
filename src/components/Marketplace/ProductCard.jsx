@@ -1,12 +1,11 @@
 import { useNavigate } from 'react-router-dom';
-import { Badge } from '../common/Badge';
 import { formatCurrency } from '../../hooks/useEMI';
 import './ProductCard.css';
 
 /**
- * Product card component for the marketplace grid
- * Displays product image, name, pricing, and starting EMI
- * All data comes from props (fetched by parent from API)
+ * Product Card component matching 1Fi app aesthetics
+ * Features clean white card, 16px radius, No Cost EMI badge,
+ * original & discount pricing, and monthly installment highlight
  */
 export function ProductCard({ product }) {
   const navigate = useNavigate();
@@ -14,7 +13,7 @@ export function ProductCard({ product }) {
   const effectivePrice = product.basePrice - (product.discount || 0);
   const hasDiscount = product.discount > 0;
 
-  // Get the lowest EMI from available plans
+  // Compute the lowest 0% EMI from available plans
   const lowestEMI = product.emiPlans.reduce((min, plan) => {
     if (plan.interestRate === 0) {
       const emi = Math.ceil(effectivePrice / plan.tenure);
@@ -29,51 +28,48 @@ export function ProductCard({ product }) {
 
   return (
     <article
-      className="product-card"
+      className="mobile-product-card"
       onClick={handleClick}
       role="link"
       tabIndex={0}
       aria-label={`${product.name} - ${formatCurrency(effectivePrice)}`}
       onKeyDown={(e) => e.key === 'Enter' && handleClick()}
     >
-      {/* Tags */}
-      {product.tags.length > 0 && (
-        <div className="card-tags">
-          <Badge variant={product.tags[0] === 'No Cost EMI' ? 'success' : 'default'} size="sm">
-            {product.tags[0]}
-          </Badge>
-        </div>
-      )}
+      {/* Badge Tag */}
+      <div className="card-badge-row">
+        <span className="card-emi-tag">
+          <span className="sparkle-dot">✦</span> No Cost EMI
+        </span>
+      </div>
 
       {/* Product Image */}
-      <div className="card-image-wrapper">
+      <div className="card-img-box">
         <img
           src={product.images[0]}
           alt={product.name}
-          className="card-image"
+          className="card-img"
           loading="lazy"
         />
       </div>
 
-      {/* Product Info */}
-      <div className="card-info">
-        <span className="card-brand">{product.brand}</span>
-        <h3 className="card-name">{product.name}</h3>
+      {/* Product Metadata */}
+      <div className="card-meta">
+        <span className="card-brand-label">{product.brand}</span>
+        <h3 className="card-title-text">{product.name}</h3>
 
-        <div className="card-pricing">
-          <span className="card-price">{formatCurrency(effectivePrice)}</span>
+        {/* Pricing */}
+        <div className="card-price-row">
+          <span className="card-effective-price">{formatCurrency(effectivePrice)}</span>
           {hasDiscount && (
-            <span className="card-original-price">{formatCurrency(product.basePrice)}</span>
+            <span className="card-mrp-price">{formatCurrency(product.basePrice)}</span>
           )}
         </div>
 
+        {/* Monthly EMI Highlight */}
         {lowestEMI !== Infinity && (
-          <div className="card-emi">
-            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-              <rect x="2" y="5" width="20" height="14" rx="2" />
-              <line x1="2" y1="10" x2="22" y2="10" />
-            </svg>
-            From {formatCurrency(lowestEMI)}/mo
+          <div className="card-monthly-box">
+            <span className="monthly-emi-amount">{formatCurrency(lowestEMI)}<span className="mo-text">/mo</span></span>
+            <span className="zero-interest-pill">0% Int</span>
           </div>
         )}
       </div>

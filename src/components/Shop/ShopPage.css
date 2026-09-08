@@ -1,61 +1,467 @@
-/* ---- Shop Page ---- */
+/* ============================================
+   1Fi Mobile Shop Screen CSS
+   Pixel-accurate matching of Screenshot 3
+   ============================================ */
 
-.shop-page {
-  min-height: calc(100vh - var(--header-height) - var(--bottom-nav-height) - 28px);
-  background: var(--color-surface);
+.shop-screen {
+  background: #F7F8FC;
+  min-height: 100vh;
 }
 
-.shop-content {
-  animation: fadeIn var(--transition-slow) ease;
+/* 1. Deep Blue/Purple Hero Section (Exact Match to Screenshot 3) */
+.shop-hero {
+  background: linear-gradient(165deg, #130752 0%, #1D0C70 45%, #2D1294 100%);
+  padding: 16px 18px 24px;
+  position: relative;
+  overflow: hidden;
+  color: #FFFFFF;
 }
 
-/* Placeholder Tabs (Top Brands, Nearby Stores) */
-.placeholder-tab {
+.hero-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(8px);
+  border-radius: 9999px;
+  padding: 4px 12px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  margin-bottom: 12px;
+}
+
+.badge-sparkle {
+  color: #FBBF24;
+  font-size: 10px;
+}
+
+.hero-text-wrap {
+  position: relative;
+  z-index: 2;
+  max-width: 62%;
+}
+
+.shop-hero-headline {
+  font-size: 24px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0;
+  color: #FFFFFF;
+  letter-spacing: -0.3px;
+}
+
+.shop-hero-sub {
+  font-size: 11.5px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.45;
+  margin: 8px 0 0;
+}
+
+/* Floating 3D Illustration Graphic (Gadgets, Vehicles & Shopping Bag) */
+.shop-hero-illustration {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 140px;
+  height: 130px;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.floating-bag {
+  position: relative;
+  font-size: 54px;
+  filter: drop-shadow(0 8px 16px rgba(0, 0, 0, 0.35));
+  animation: floatBag 3s ease-in-out infinite alternate;
+}
+
+.confetti-spark {
+  position: absolute;
+  font-size: 18px;
+}
+
+.c-spark-1 {
+  top: -8px;
+  right: -6px;
+  animation: spinSpark 4s linear infinite;
+}
+
+.c-spark-2 {
+  bottom: 0;
+  left: -8px;
+}
+
+.floating-gadgets {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.gadget-phone {
+  position: absolute;
+  top: 4px;
+  left: 6px;
+  font-size: 22px;
+  transform: rotate(-15deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.gadget-laptop {
+  position: absolute;
+  bottom: 8px;
+  left: 12px;
+  font-size: 24px;
+  transform: rotate(10deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+
+.gadget-car {
+  position: absolute;
+  top: 14px;
+  right: 2px;
+  font-size: 22px;
+  transform: rotate(12deg);
+}
+
+.gadget-bike {
+  position: absolute;
+  bottom: 12px;
+  right: 6px;
+  font-size: 22px;
+  transform: rotate(-8deg);
+}
+
+@keyframes floatBag {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(-6px) rotate(2deg); }
+}
+
+@keyframes spinSpark {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 2. Three-Tab Segmented Selector (Exact Match to Screenshot 3) */
+.shop-tabs-container {
+  padding: 14px 16px 4px;
+}
+
+.segmented-tabs {
+  background: #EFEBF8;
+  border-radius: 9999px;
+  padding: 4px;
+  display: flex;
+  gap: 3px;
+}
+
+.seg-tab {
+  flex: 1;
+  border: none;
+  background: transparent;
+  padding: 8px 6px;
+  border-radius: 9999px;
+  cursor: pointer;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
-  padding: var(--space-12) var(--space-6);
-  min-height: 400px;
-  animation: fadeInUp 0.4s ease forwards;
+  transition: all 0.2s ease;
+  font-family: inherit;
 }
 
-.placeholder-icon {
-  width: 80px;
-  height: 80px;
-  border-radius: 50%;
-  background: var(--color-primary-lighter);
+.seg-tab-label {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #6B7280;
+  white-space: nowrap;
+}
+
+.seg-tab--active {
+  background: #FFFFFF;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.seg-tab--active .seg-tab-label {
+  color: #5B21B6;
+  font-weight: 700;
+}
+
+/* Purple Underline Active Indicator */
+.seg-active-bar {
+  width: 32px;
+  height: 3px;
+  background: #6C28D9;
+  border-radius: 2px;
+  margin-top: 3px;
+}
+
+/* 3. Search Bar */
+.shop-search-wrapper {
+  padding: 8px 16px 12px;
+}
+
+.shop-search-input-box {
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  padding: 10px 16px;
+  gap: 10px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.02);
+  transition: border-color 0.2s ease;
+}
+
+.shop-search-input-box:focus-within {
+  border-color: #6C28D9;
+}
+
+.search-glass-icon {
+  flex-shrink: 0;
+}
+
+.search-input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 13.5px;
+  color: #1F2937;
+  background: transparent;
+  font-family: inherit;
+}
+
+.search-input::placeholder {
+  color: #9CA3AF;
+}
+
+.search-clear {
+  background: none;
+  border: none;
+  color: #9CA3AF;
+  cursor: pointer;
+  font-size: 12px;
+  padding: 2px 4px;
+}
+
+/* 4. Tab Body Content */
+.shop-body {
+  padding: 0 16px 20px;
+}
+
+.section-headline {
+  font-size: 17px;
+  font-weight: 800;
+  color: #111827;
+  margin: 8px 0 14px;
+  letter-spacing: -0.2px;
+}
+
+/* Brands Card List */
+.brands-card-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.brand-row-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  padding: 14px 16px;
+  border: 1px solid #ECEEF5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.brand-row-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(108, 40, 217, 0.08);
+}
+
+.brand-logo-box {
+  width: 54px;
+  height: 54px;
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: var(--space-5);
-  color: var(--color-primary);
+  flex-shrink: 0;
+  color: #FFFFFF;
+  overflow: hidden;
+  padding: 6px;
+  text-align: center;
 }
 
-.placeholder-title {
-  font-size: var(--font-size-xl);
-  font-weight: 700;
-  color: var(--color-text-primary);
-  margin-bottom: var(--space-2);
-}
-
-.placeholder-desc {
-  font-size: var(--font-size-base);
-  color: var(--color-text-secondary);
-  max-width: 260px;
-  line-height: 1.6;
-  margin-bottom: var(--space-6);
-}
-
-.placeholder-badge {
-  display: inline-flex;
+.logo-airindia {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-2) var(--space-4);
-  border-radius: var(--radius-full);
-  background: var(--color-primary-light);
-  color: var(--color-primary);
-  font-size: var(--font-size-sm);
+}
+
+.ai-text {
+  font-size: 8px;
+  font-weight: 900;
+  letter-spacing: 0.5px;
+}
+
+.logo-apple {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1;
+}
+
+.apple-reseller-text {
+  font-size: 6.5px;
   font-weight: 600;
+  color: #E5E7EB;
+  margin-top: 1px;
+}
+
+.logo-caratlane {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cl-dots {
+  font-size: 10px;
+  line-height: 1;
+}
+
+.cl-text {
+  font-size: 7.5px;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+}
+
+.logo-emt-text {
+  font-size: 8.5px;
+  font-weight: 900;
+}
+
+.logo-taj-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.taj-crest-white {
+  font-size: 10px;
+  line-height: 1;
+}
+
+.taj-name-white {
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.logo-rel-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  line-height: 1.1;
+}
+
+.rel-white {
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.rel-sub-white {
+  font-size: 7px;
+  color: #F87171;
+}
+
+.brand-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.brand-card-name {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #111827;
+  margin: 0 0 3px;
+}
+
+.brand-card-emi {
+  font-size: 12px;
+  color: #6B7280;
+  margin: 0;
+}
+
+.brand-card-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9CA3AF;
+  flex-shrink: 0;
+}
+
+/* Nearby Stores Section */
+.nearby-location-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: #F3E8FF;
+  border-radius: 12px;
+  padding: 8px 12px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: #4C1D95;
+  margin-bottom: 14px;
+}
+
+.change-loc-btn {
+  margin-left: auto;
+  background: none;
+  border: none;
+  color: #6C28D9;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.stores-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.store-card {
+  align-items: flex-start;
+}
+
+.store-header-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.store-dist-badge {
+  background: #ECFDF5;
+  color: #059669;
+  border-radius: 9999px;
+  padding: 2px 8px;
+  font-size: 10.5px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.store-loc-text {
+  font-size: 12px;
+  color: #4B5563;
+  margin: 2px 0 4px;
 }

@@ -6,10 +6,10 @@ import { ErrorState, EmptyState } from '../common/ErrorState';
 import './ProductList.css';
 
 /**
- * Product listing grid with category filters
- * Fetches data dynamically from mock API
+ * Product listing grid with category filters and search filtering
+ * Designed for 1Fi Marketplace
  */
-export function ProductList() {
+export function ProductList({ searchQuery = '' }) {
   const [activeCategory, setActiveCategory] = useState('all');
   const { products, categories, loading, error, refetch } = useProducts(activeCategory);
 
@@ -21,35 +21,19 @@ export function ProductList() {
     return <ErrorState message={error} onRetry={refetch} />;
   }
 
+  // Filter products by search query if provided
+  const filteredProducts = products.filter(product => {
+    if (!searchQuery.trim()) return true;
+    const query = searchQuery.toLowerCase();
+    return (
+      product.name.toLowerCase().includes(query) ||
+      product.brand.toLowerCase().includes(query) ||
+      product.category.toLowerCase().includes(query)
+    );
+  });
+
   return (
     <div className="product-list-wrapper">
-      {/* Marketplace Header */}
-      <div className="marketplace-header">
-        <div className="marketplace-banner">
-          <div className="banner-content">
-            <div className="banner-badge">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor">
-                <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
-              </svg>
-              Shop with Mutual Funds
-            </div>
-            <h2 className="banner-title">
-              0% Interest EMI
-            </h2>
-            <p className="banner-subtitle">
-              Buy now, pay later — backed by your investments
-            </p>
-          </div>
-          <div className="banner-decoration">
-            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5" strokeLinecap="round" strokeLinejoin="round" opacity="0.15">
-              <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
-              <line x1="3" y1="6" x2="21" y2="6" />
-              <path d="M16 10a4 4 0 0 1-8 0" />
-            </svg>
-          </div>
-        </div>
-      </div>
-
       {/* Category Filters */}
       {loading && !categories.length ? (
         <CategorySkeleton />
@@ -63,37 +47,34 @@ export function ProductList() {
               aria-pressed={activeCategory === cat.id}
             >
               <CategoryIcon name={cat.icon} />
-              {cat.name}
+              <span>{cat.name}</span>
             </button>
           ))}
         </div>
       )}
 
-      {/* Product Count */}
-      {!loading && products.length > 0 && (
-        <div className="product-count">
-          <span>{products.length} product{products.length !== 1 ? 's' : ''}</span>
-        </div>
-      )}
+      {/* Results Header */}
+      <div className="product-results-header">
+        <h2 className="results-title">
+          {activeCategory === 'all' ? 'All Products' : categories.find(c => c.id === activeCategory)?.name || 'Products'}
+        </h2>
+        {!loading && (
+          <span className="results-count">{filteredProducts.length} items</span>
+        )}
+      </div>
 
       {/* Product Grid */}
       {loading ? (
-        <ProductListSkeleton count={6} />
-      ) : products.length === 0 ? (
+        <ProductListSkeleton count={4} />
+      ) : filteredProducts.length === 0 ? (
         <EmptyState
           title="No products found"
-          message="Try selecting a different category."
+          message={searchQuery ? `No items matching "${searchQuery}". Try a different keyword.` : "No products available in this category."}
         />
       ) : (
-        <div className="product-grid">
-          {products.map((product, index) => (
-            <div
-              key={product.id}
-              className={`animate-fade-in-up stagger-${Math.min(index + 1, 8)}`}
-              style={{ opacity: 0 }}
-            >
-              <ProductCard product={product} />
-            </div>
+        <div className="product-grid" role="region" aria-label="Product list">
+          {filteredProducts.map(product => (
+            <ProductCard key={product.id} product={product} />
           ))}
         </div>
       )}
@@ -102,42 +83,48 @@ export function ProductList() {
 }
 
 /**
- * Small icon component for category chips
+ * Category icons
  */
 function CategoryIcon({ name }) {
-  const icons = {
-    grid: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="3" y="3" width="7" height="7" />
-        <rect x="14" y="3" width="7" height="7" />
-        <rect x="14" y="14" width="7" height="7" />
-        <rect x="3" y="14" width="7" height="7" />
-      </svg>
-    ),
-    smartphone: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="5" y="2" width="14" height="20" rx="2" ry="2" />
-        <line x1="12" y1="18" x2="12.01" y2="18" />
-      </svg>
-    ),
-    laptop: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16" />
-      </svg>
-    ),
-    headphones: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
-        <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
-      </svg>
-    ),
-    tablet: (
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="4" y="2" width="16" height="20" rx="2" ry="2" />
-        <line x1="12" y1="18" x2="12.01" y2="18" />
-      </svg>
-    ),
-  };
-
-  return icons[name] || icons.grid;
+  switch (name) {
+    case 'grid':
+      return (
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="3" width="7" height="7" rx="1.5" />
+          <rect x="14" y="3" width="7" height="7" rx="1.5" />
+          <rect x="14" y="14" width="7" height="7" rx="1.5" />
+          <rect x="3" y="14" width="7" height="7" rx="1.5" />
+        </svg>
+      );
+    case 'smartphone':
+      return (
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="5" y="2" width="14" height="20" rx="3" />
+          <line x1="12" y1="18" x2="12.01" y2="18" />
+        </svg>
+      );
+    case 'laptop':
+      return (
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="3" y="4" width="18" height="12" rx="2" />
+          <line x1="2" y1="20" x2="22" y2="20" />
+        </svg>
+      );
+    case 'headphones':
+      return (
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M3 18v-6a9 9 0 0 1 18 0v6" />
+          <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z" />
+        </svg>
+      );
+    case 'tablet':
+      return (
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+          <rect x="4" y="2" width="16" height="20" rx="2" />
+          <line x1="12" y1="18" x2="12.01" y2="18" />
+        </svg>
+      );
+    default:
+      return null;
+  }
 }

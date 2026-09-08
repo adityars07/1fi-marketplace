@@ -1,116 +1,150 @@
-/* ---- Product Card ---- */
+/* ---- Product Card CSS ---- */
 
-.product-card {
-  background: var(--color-bg);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--color-border);
-  border-bottom: 3px solid var(--color-border);
+.mobile-product-card {
+  background: #FFFFFF;
+  border-radius: 20px;
+  border: 1px solid #ECEEF5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
   cursor: pointer;
-  transition: all var(--transition-base);
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   position: relative;
   outline: none;
 }
 
-.product-card:hover {
-  border-color: var(--color-primary-subtle);
-  border-bottom-color: var(--color-primary-subtle);
+.mobile-product-card:hover {
   transform: translateY(-2px);
-  box-shadow: var(--shadow-md);
+  box-shadow: 0 6px 16px rgba(108, 40, 217, 0.1);
+  border-color: #D8B4FE;
 }
 
-.product-card:focus-visible {
-  border-color: var(--color-primary);
-  box-shadow: 0 0 0 3px var(--color-primary-subtle);
+.mobile-product-card:focus-visible {
+  border-color: #6C28D9;
+  box-shadow: 0 0 0 3px rgba(108, 40, 217, 0.2);
 }
 
-.product-card:active {
-  transform: translateY(0);
+.card-badge-row {
+  padding: 10px 10px 0;
+  display: flex;
+  justify-content: flex-start;
 }
 
-/* Tags */
-.card-tags {
-  position: absolute;
-  top: var(--space-2);
-  left: var(--space-2);
-  z-index: 2;
+.card-emi-tag {
+  background: #F3E8FF;
+  color: #6C28D9;
+  border-radius: 9999px;
+  font-size: 9.5px;
+  font-weight: 700;
+  padding: 2px 7px;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  letter-spacing: 0.2px;
 }
 
-/* Image */
-.card-image-wrapper {
-  background: var(--color-primary-lighter);
-  aspect-ratio: 1;
+.sparkle-dot {
+  color: #9333EA;
+  font-size: 8px;
+}
+
+.card-img-box {
+  height: 115px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: var(--space-4);
-  overflow: hidden;
+  padding: 4px 10px;
+  background: transparent;
 }
 
-.card-image {
-  width: 100%;
-  height: 100%;
+.card-img {
+  max-height: 100%;
+  max-width: 100%;
   object-fit: contain;
-  transition: transform var(--transition-slow);
+  transition: transform 0.2s ease;
 }
 
-.product-card:hover .card-image {
-  transform: scale(1.05);
+.mobile-product-card:hover .card-img {
+  transform: scale(1.04);
 }
 
-/* Info */
-.card-info {
-  padding: var(--space-3);
+.card-meta {
+  padding: 6px 12px 12px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  justify-content: space-between;
 }
 
-.card-brand {
-  font-size: var(--font-size-xs);
-  color: var(--color-text-muted);
-  font-weight: 500;
+.card-brand-label {
+  font-size: 9.5px;
+  font-weight: 800;
+  color: #9CA3AF;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.6px;
 }
 
-.card-name {
-  font-size: var(--font-size-base);
-  font-weight: 600;
-  color: var(--color-text-primary);
-  margin-top: 2px;
-  line-height: 1.3;
+.card-title-text {
+  font-size: 13px;
+  font-weight: 700;
+  color: #111827;
+  margin: 2px 0 6px;
+  line-height: 1.25;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  height: 32px;
 }
 
-.card-pricing {
+.card-price-row {
   display: flex;
   align-items: baseline;
-  gap: var(--space-2);
-  margin-top: var(--space-2);
+  gap: 5px;
+  margin-bottom: 6px;
 }
 
-.card-price {
-  font-size: var(--font-size-md);
-  font-weight: 700;
-  color: var(--color-text-primary);
+.card-effective-price {
+  font-size: 14px;
+  font-weight: 800;
+  color: #111827;
 }
 
-.card-original-price {
-  font-size: var(--font-size-sm);
-  color: var(--color-text-muted);
+.card-mrp-price {
+  font-size: 10.5px;
+  color: #9CA3AF;
   text-decoration: line-through;
 }
 
-.card-emi {
+.card-monthly-box {
+  background: #F8F6FD;
+  border-radius: 8px;
+  padding: 4px 6px;
   display: flex;
   align-items: center;
-  gap: var(--space-1);
-  margin-top: var(--space-2);
-  font-size: var(--font-size-xs);
+  justify-content: space-between;
+  border: 1px solid #EDE9FE;
+}
+
+.monthly-emi-amount {
+  font-size: 11.5px;
+  font-weight: 800;
+  color: #6C28D9;
+}
+
+.mo-text {
+  font-size: 8.5px;
   font-weight: 600;
-  color: var(--color-primary);
-  background: var(--color-primary-lighter);
-  padding: 4px 8px;
-  border-radius: var(--radius-sm);
+  color: #7C3AED;
+}
+
+.zero-interest-pill {
+  background: #10B981;
+  color: #FFFFFF;
+  font-size: 8px;
+  font-weight: 800;
+  border-radius: 4px;
+  padding: 1px 4px;
+  line-height: 1.2;
 }
