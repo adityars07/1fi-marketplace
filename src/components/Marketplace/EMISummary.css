@@ -1,0 +1,103 @@
+/* ---- EMI Summary Card ---- */
+
+.emi-summary {
+  background: linear-gradient(135deg, var(--color-primary-lighter), #F5F0FF);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-primary-subtle);
+  overflow: hidden;
+  margin-top: var(--space-4);
+}
+
+.emi-summary-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: linear-gradient(135deg, rgba(108, 40, 217, 0.08), rgba(162, 3, 213, 0.04));
+}
+
+.summary-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.summary-title {
+  font-size: var(--font-size-md);
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+.summary-subtitle {
+  font-size: var(--font-size-sm);
+  color: var(--color-primary);
+  font-weight: 500;
+}
+
+.emi-summary-body {
+  padding: var(--space-4);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-2) 0;
+}
+
+.summary-label {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+.summary-value {
+  font-size: var(--font-size-base);
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+.summary-value--highlight {
+  font-size: var(--font-size-lg);
+  color: var(--color-primary);
+  font-weight: 800;
+}
+
+.summary-row--total {
+  padding-top: var(--space-3);
+}
+
+.summary-row--total .summary-label {
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.summary-row--total .summary-value {
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+}
+
+.summary-divider {
+  height: 1px;
+  background: var(--color-primary-subtle);
+  margin: var(--space-2) 0;
+}
+
+.summary-saving {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding: var(--space-3);
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  color: #065F46;
+}

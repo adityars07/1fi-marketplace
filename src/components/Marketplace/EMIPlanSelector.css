@@ -1,0 +1,110 @@
+/* ---- EMI Plan Selector ---- */
+
+.emi-selector {
+  margin-bottom: var(--space-4);
+}
+
+.emi-selector-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.emi-selector-title {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-md);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.emi-selector-subtitle {
+  font-size: var(--font-size-xs);
+  color: var(--color-primary);
+  font-weight: 600;
+  background: var(--color-primary-lighter);
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+}
+
+/* Plans Grid */
+.emi-plans-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+.emi-plan-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-3) var(--space-2);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  position: relative;
+  cursor: pointer;
+  background: var(--color-bg);
+}
+
+.emi-plan-chip:hover {
+  border-color: var(--color-primary-subtle);
+}
+
+.emi-plan-chip--selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-lighter);
+  border-bottom: 3px solid var(--color-primary);
+}
+
+.plan-tenure {
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  color: var(--color-text-muted);
+}
+
+.emi-plan-chip--selected .plan-tenure {
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+.plan-emi {
+  font-size: var(--font-size-base);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-top: 2px;
+}
+
+.emi-plan-chip--selected .plan-emi {
+  color: var(--color-primary);
+}
+
+.plan-nocost-badge {
+  position: absolute;
+  top: -8px;
+  right: -6px;
+  background: var(--color-success);
+  color: white;
+  font-size: 9px;
+  font-weight: 700;
+  padding: 1px 5px;
+  border-radius: var(--radius-full);
+  line-height: 1.4;
+}
+
+/* Loading */
+.emi-plans-loading {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+.emi-plan-skeleton {
+  height: 60px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 37%, #f0f0f0 63%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+}

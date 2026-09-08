@@ -1,0 +1,134 @@
+/* ---- Product List ---- */
+
+.product-list-wrapper {
+  min-height: 400px;
+}
+
+/* Marketplace Banner */
+.marketplace-header {
+  padding: var(--space-4);
+  padding-bottom: 0;
+}
+
+.marketplace-banner {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-gradient-end));
+  border-radius: var(--radius-xl);
+  padding: var(--space-5);
+  position: relative;
+  overflow: hidden;
+  color: white;
+}
+
+.banner-content {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-xs);
+  font-weight: 600;
+  margin-bottom: var(--space-3);
+}
+
+.banner-title {
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  margin-bottom: var(--space-1);
+  line-height: 1.2;
+}
+
+.banner-subtitle {
+  font-size: var(--font-size-sm);
+  opacity: 0.9;
+  font-weight: 400;
+}
+
+.banner-decoration {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+}
+
+/* Category Filters */
+.category-filters {
+  display: flex;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  padding-bottom: 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+
+.category-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.category-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-1);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 500;
+  white-space: nowrap;
+  border: 1px solid var(--color-border);
+  background: var(--color-bg);
+  color: var(--color-text-secondary);
+  transition: all var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.category-chip:hover {
+  border-color: var(--color-primary-subtle);
+  color: var(--color-primary);
+}
+
+.category-chip--active {
+  background: var(--color-primary);
+  color: white;
+  border-color: var(--color-primary);
+}
+
+.category-chip--active:hover {
+  background: var(--color-primary-hover);
+  color: white;
+}
+
+/* Product Count */
+.product-count {
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+/* Product Grid */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+  padding: 0 var(--space-4) var(--space-4);
+}
+
+@media (min-width: 640px) {
+  .product-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

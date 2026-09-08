@@ -1,0 +1,124 @@
+/* ---- Variant Selector ---- */
+
+.variant-selector {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.variant-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.variant-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.variant-label-title {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.variant-label-value {
+  font-size: var(--font-size-base);
+  color: var(--color-text-secondary);
+  font-weight: 400;
+}
+
+/* Color Swatches */
+.color-options {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.color-swatch {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  padding: 3px;
+  border: 2px solid transparent;
+  transition: all var(--transition-fast);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.color-swatch:hover {
+  border-color: var(--color-border-accent);
+}
+
+.color-swatch--selected {
+  border-color: var(--color-primary);
+}
+
+.swatch-inner {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.swatch-check {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Storage Chips */
+.storage-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.storage-chip {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--space-3) var(--space-4);
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+  min-width: 80px;
+  cursor: pointer;
+}
+
+.storage-chip:hover {
+  border-color: var(--color-primary-subtle);
+}
+
+.storage-chip--selected {
+  border-color: var(--color-primary);
+  background: var(--color-primary-lighter);
+}
+
+.storage-name {
+  font-size: var(--font-size-base);
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.storage-chip--selected .storage-name {
+  color: var(--color-primary);
+}
+
+.storage-add {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+  margin-top: 2px;
+}
+
+.storage-chip--selected .storage-add {
+  color: var(--color-primary);
+  opacity: 0.8;
+}

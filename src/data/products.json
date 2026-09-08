@@ -1,0 +1,357 @@
+{
+  "categories": [
+    { "id": "all", "name": "All", "icon": "grid" },
+    { "id": "smartphones", "name": "Smartphones", "icon": "smartphone" },
+    { "id": "laptops", "name": "Laptops", "icon": "laptop" },
+    { "id": "audio", "name": "Audio", "icon": "headphones" },
+    { "id": "tablets", "name": "Tablets", "icon": "tablet" }
+  ],
+  "products": [
+    {
+      "id": "iphone-17-pro-max",
+      "name": "iPhone 17 Pro Max",
+      "brand": "Apple",
+      "category": "smartphones",
+      "description": "The most advanced iPhone ever with A19 Pro chip, 48MP Fusion camera system, and titanium design.",
+      "basePrice": 144900,
+      "discount": 0,
+      "rating": 4.8,
+      "reviewCount": 2340,
+      "tags": ["No Cost EMI", "Instant Approval", "Best Seller"],
+      "inStock": true,
+      "variants": {
+        "colors": [
+          { "id": "natural-titanium", "name": "Natural Titanium", "hex": "#A6A199", "imageIndex": 0 },
+          { "id": "blue-titanium", "name": "Blue Titanium", "hex": "#3B4755", "imageIndex": 1 },
+          { "id": "white-titanium", "name": "White Titanium", "hex": "#F2F1EB", "imageIndex": 2 },
+          { "id": "black-titanium", "name": "Black Titanium", "hex": "#3C3B37", "imageIndex": 3 }
+        ],
+        "storage": [
+          { "id": "256gb", "name": "256 GB", "priceAdd": 0 },
+          { "id": "512gb", "name": "512 GB", "priceAdd": 10000 },
+          { "id": "1tb", "name": "1 TB", "priceAdd": 20000 }
+        ]
+      },
+      "images": [
+        "https://1fi.in/iphone_pro_home.webp",
+        "https://1fi.in/iphone17_home.webp",
+        "https://1fi.in/iphone_pro_home.webp",
+        "https://1fi.in/iphone17_home.webp"
+      ],
+      "emiPlans": [
+        { "tenure": 3, "interestRate": 0, "processingFee": 499 },
+        { "tenure": 6, "interestRate": 0, "processingFee": 499 },
+        { "tenure": 9, "interestRate": 0, "processingFee": 499 },
+        { "tenure": 12, "interestRate": 0, "processingFee": 499 },
+        { "tenure": 18, "interestRate": 8, "processingFee": 0 },
+        { "tenure": 24, "interestRate": 8, "processingFee": 0 }
+      ],
+      "specs": {
+        "Display": "6.9-inch Super Retina XDR OLED",
+        "Processor": "A19 Pro chip",
+        "Camera": "48MP Fusion + 48MP Ultra Wide + 12MP Telephoto",
+        "Battery": "4685 mAh",
+        "OS": "iOS 19"
+      }
+    },
+    {
+      "id": "iphone-17",
+      "name": "iPhone 17",
+      "brand": "Apple",
+      "category": "smartphones",
+      "description": "The new standard iPhone with A19 chip, Dynamic Island, and an all-new aluminum design.",
+      "basePrice": 79900,
+      "discount": 0,
+      "rating": 4.6,
+      "reviewCount": 1820,
+      "tags": ["No Cost EMI", "New Launch"],
+      "inStock": true,
+      "variants": {
+        "colors": [
+          { "id": "blue", "name": "Blue", "hex": "#7BA4D4", "imageIndex": 0 },
+          { "id": "green", "name": "Green", "hex": "#B9CEAC", "imageIndex": 1 },
+          { "id": "pink", "name": "Pink", "hex": "#F4D2CE", "imageIndex": 0 },
+          { "id": "starlight", "name": "Starlight", "hex": "#F5F0E8", "imageIndex": 1 }
+        ],
+        "storage": [
+          { "id": "128gb", "name": "128 GB", "priceAdd": 0 },
+          { "id": "256gb", "name": "256 GB", "priceAdd": 10000 },
+          { "id": "512gb", "name": "512 GB", "priceAdd": 20000 }
+        ]
+      },
+      "images": [
+        "https://1fi.in/iphone17_home.webp",
+        "https://1fi.in/iphone_pro_home.webp"
+      ],
+      "emiPlans": [
+        { "tenure": 3, "interestRate": 0, "processingFee": 399 },
+        { "tenure": 6, "interestRate": 0, "processingFee": 399 },
+        { "tenure": 9, "interestRate": 0, "processingFee": 399 },
+        { "tenure": 12, "interestRate": 0, "processingFee": 399 },
+        { "tenure": 18, "interestRate": 8, "processingFee": 0 },
+        { "tenure": 24, "interestRate": 8, "processingFee": 0 }
+      ],
+      "specs": {
+        "Display": "6.3-inch Super Retina XDR OLED",
+        "Processor": "A19 chip",
+        "Camera": "48MP Fusion + 12MP Ultra Wide",
+        "Battery": "4000 mAh",
+        "OS": "iOS 19"
+      }
+    },
+    {
+      "id": "google-pixel-10",
+      "name": "Google Pixel 10",
+      "brand": "Google",
+      "category": "smartphones",
+      "description": "The best of Google AI in a phone. Tensor G5 chip, Magic Eraser, and 7 years of updates.",
+      "basePrice": 79999,
+      "discount": 5000,
+      "rating": 4.5,
+      "reviewCount": 980,
+      "tags": ["No Cost EMI", "Special Offer"],
+      "inStock": true,
+      "variants": {
+        "colors": [
+          { "id": "obsidian", "name": "Obsidian", "hex": "#3C3C3C", "imageIndex": 0 },
+          { "id": "porcelain", "name": "Porcelain", "hex": "#F0EAE0", "imageIndex": 1 },
+          { "id": "mint", "name": "Wintergreen", "hex": "#B5D5C5", "imageIndex": 0 }
+        ],
+        "storage": [
+          { "id": "128gb", "name": "128 GB", "priceAdd": 0 },
+          { "id": "256gb", "name": "256 GB", "priceAdd": 10000 }
+        ]
+      },
+      "images": [
+        "https://1fi.in/pixel-home-1.webp",
+        "https://1fi.in/pixel-home-1.webp"
+      ],
+      "emiPlans": [
+        { "tenure": 3, "interestRate": 0, "processingFee": 399 },
+        { "tenure": 6, "interestRate": 0, "processingFee": 399 },
+        { "tenure": 9, "interestRate": 0, "processingFee": 399 },
+        { "tenure": 12, "interestRate": 0, "processingFee": 399 },
+        { "tenure": 18, "interestRate": 8, "processingFee": 0 },
+        { "tenure": 24, "interestRate": 8, "processingFee": 0 }
+      ],
+      "specs": {
+        "Display": "6.3-inch Actua OLED, 120Hz",
+        "Processor": "Google Tensor G5",
+        "Camera": "50MP Main + 48MP Ultrawide",
+        "Battery": "4575 mAh",
+        "OS": "Android 16"
+      }
+    },
+    {
+      "id": "samsung-galaxy-s25-ultra",
+      "name": "Samsung Galaxy S25 Ultra",
+      "brand": "Samsung",
+      "category": "smartphones",
+      "description": "Galaxy AI built in. Titanium frame, 200MP camera, and the embedded S Pen.",
+      "basePrice": 134999,
+      "discount": 10000,
+      "rating": 4.7,
+      "reviewCount": 3100,
+      "tags": ["No Cost EMI", "Instant Approval"],
+      "inStock": true,
+      "variants": {
+        "colors": [
+          { "id": "titanium-black", "name": "Titanium Black", "hex": "#2C2C2C", "imageIndex": 0 },
+          { "id": "titanium-gray", "name": "Titanium Gray", "hex": "#8E8E8E", "imageIndex": 1 },
+          { "id": "titanium-blue", "name": "Titanium Blue", "hex": "#5B7FA5", "imageIndex": 0 },
+          { "id": "titanium-silver", "name": "Titanium Silver", "hex": "#C0C0C0", "imageIndex": 1 }
+        ],
+        "storage": [
+          { "id": "256gb", "name": "256 GB", "priceAdd": 0 },
+          { "id": "512gb", "name": "512 GB", "priceAdd": 12000 },
+          { "id": "1tb", "name": "1 TB", "priceAdd": 24000 }
+        ]
+      },
+      "images": [
+        "https://1fi.in/samsungs25_home.webp",
+        "https://1fi.in/samsungs25_home.webp"
+      ],
+      "emiPlans": [
+        { "tenure": 3, "interestRate": 0, "processingFee": 499 },
+        { "tenure": 6, "interestRate": 0, "processingFee": 499 },
+        { "tenure": 9, "interestRate": 0, "processingFee": 499 },
+        { "tenure": 12, "interestRate": 0, "processingFee": 499 },
+        { "tenure": 18, "interestRate": 8, "processingFee": 0 },
+        { "tenure": 24, "interestRate": 8, "processingFee": 0 }
+      ],
+      "specs": {
+        "Display": "6.9-inch Dynamic AMOLED 2X, 120Hz",
+        "Processor": "Snapdragon 8 Elite",
+        "Camera": "200MP + 50MP Ultrawide + 50MP Telephoto",
+        "Battery": "5000 mAh",
+        "OS": "Android 15 + One UI 7"
+      }
+    },
+    {
+      "id": "oneplus-15",
+      "name": "OnePlus 15",
+      "brand": "OnePlus",
+      "category": "smartphones",
+      "description": "Never Settle. Hasselblad Camera, OxygenOS 15, and 100W SUPERVOOC charging.",
+      "basePrice": 57999,
+      "discount": 3000,
+      "rating": 4.4,
+      "reviewCount": 1540,
+      "tags": ["No Cost EMI", "Fast Delivery"],
+      "inStock": true,
+      "variants": {
+        "colors": [
+          { "id": "midnight-rain", "name": "Midnight Rain", "hex": "#1A1A2E", "imageIndex": 0 },
+          { "id": "lunar-silver", "name": "Lunar Silver", "hex": "#D1D1D6", "imageIndex": 1 }
+        ],
+        "storage": [
+          { "id": "128gb", "name": "128 GB", "priceAdd": 0 },
+          { "id": "256gb", "name": "256 GB", "priceAdd": 5000 }
+        ]
+      },
+      "images": [
+        "https://1fi.in/oneplus15_home.webp",
+        "https://1fi.in/oneplus15_home.webp"
+      ],
+      "emiPlans": [
+        { "tenure": 3, "interestRate": 0, "processingFee": 299 },
+        { "tenure": 6, "interestRate": 0, "processingFee": 299 },
+        { "tenure": 9, "interestRate": 0, "processingFee": 299 },
+        { "tenure": 12, "interestRate": 0, "processingFee": 299 },
+        { "tenure": 18, "interestRate": 8, "processingFee": 0 },
+        { "tenure": 24, "interestRate": 8, "processingFee": 0 }
+      ],
+      "specs": {
+        "Display": "6.82-inch LTPO AMOLED, 120Hz",
+        "Processor": "Snapdragon 8 Elite",
+        "Camera": "50MP Hasselblad + 50MP Ultrawide + 50MP Telephoto",
+        "Battery": "6000 mAh",
+        "OS": "OxygenOS 15"
+      }
+    },
+    {
+      "id": "macbook-pro-m4",
+      "name": "MacBook Pro M4",
+      "brand": "Apple",
+      "category": "laptops",
+      "description": "The most advanced Mac ever. M4 Pro chip, Liquid Retina XDR display, and up to 24 hours battery.",
+      "basePrice": 199900,
+      "discount": 0,
+      "rating": 4.9,
+      "reviewCount": 4210,
+      "tags": ["No Cost EMI", "Premium"],
+      "inStock": true,
+      "variants": {
+        "colors": [
+          { "id": "space-black", "name": "Space Black", "hex": "#2E2E2E", "imageIndex": 0 },
+          { "id": "silver", "name": "Silver", "hex": "#E3E4E5", "imageIndex": 1 }
+        ],
+        "storage": [
+          { "id": "512gb", "name": "512 GB SSD", "priceAdd": 0 },
+          { "id": "1tb", "name": "1 TB SSD", "priceAdd": 20000 },
+          { "id": "2tb", "name": "2 TB SSD", "priceAdd": 40000 }
+        ]
+      },
+      "images": [
+        "https://1fi.in/macbook.webp",
+        "https://1fi.in/macbook.webp"
+      ],
+      "emiPlans": [
+        { "tenure": 6, "interestRate": 0, "processingFee": 799 },
+        { "tenure": 9, "interestRate": 0, "processingFee": 799 },
+        { "tenure": 12, "interestRate": 0, "processingFee": 799 },
+        { "tenure": 18, "interestRate": 8, "processingFee": 0 },
+        { "tenure": 24, "interestRate": 8, "processingFee": 0 },
+        { "tenure": 36, "interestRate": 8, "processingFee": 0 }
+      ],
+      "specs": {
+        "Display": "16.2-inch Liquid Retina XDR",
+        "Processor": "Apple M4 Pro (14-core)",
+        "Memory": "24 GB Unified Memory",
+        "Battery": "Up to 24 hours",
+        "OS": "macOS Sequoia"
+      }
+    },
+    {
+      "id": "sony-wh1000xm6",
+      "name": "Sony WH-1000XM6",
+      "brand": "Sony",
+      "category": "audio",
+      "description": "Industry-leading noise cancellation with Auto NC Optimizer and 40-hour battery life.",
+      "basePrice": 29990,
+      "discount": 2000,
+      "rating": 4.7,
+      "reviewCount": 5600,
+      "tags": ["No Cost EMI", "Top Rated"],
+      "inStock": true,
+      "variants": {
+        "colors": [
+          { "id": "black", "name": "Black", "hex": "#1A1A1A", "imageIndex": 0 },
+          { "id": "silver", "name": "Platinum Silver", "hex": "#C0C0C0", "imageIndex": 1 },
+          { "id": "midnight-blue", "name": "Midnight Blue", "hex": "#1B2A4A", "imageIndex": 0 }
+        ],
+        "storage": []
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=400&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?w=400&h=400&fit=crop"
+      ],
+      "emiPlans": [
+        { "tenure": 3, "interestRate": 0, "processingFee": 199 },
+        { "tenure": 6, "interestRate": 0, "processingFee": 199 },
+        { "tenure": 9, "interestRate": 0, "processingFee": 199 },
+        { "tenure": 12, "interestRate": 0, "processingFee": 199 }
+      ],
+      "specs": {
+        "Driver": "40mm, custom-designed",
+        "Noise Cancellation": "Auto NC Optimizer",
+        "Battery": "Up to 40 hours",
+        "Connectivity": "Bluetooth 5.3, 3.5mm",
+        "Weight": "250g"
+      }
+    },
+    {
+      "id": "ipad-pro-m4",
+      "name": "iPad Pro M4",
+      "brand": "Apple",
+      "category": "tablets",
+      "description": "The thinnest, most powerful iPad Pro ever. M4 chip, Ultra Retina XDR OLED display.",
+      "basePrice": 119900,
+      "discount": 5000,
+      "rating": 4.8,
+      "reviewCount": 1890,
+      "tags": ["No Cost EMI", "New Launch"],
+      "inStock": true,
+      "variants": {
+        "colors": [
+          { "id": "space-black", "name": "Space Black", "hex": "#2E2E2E", "imageIndex": 0 },
+          { "id": "silver", "name": "Silver", "hex": "#E3E4E5", "imageIndex": 1 }
+        ],
+        "storage": [
+          { "id": "256gb", "name": "256 GB", "priceAdd": 0 },
+          { "id": "512gb", "name": "512 GB", "priceAdd": 10000 },
+          { "id": "1tb", "name": "1 TB", "priceAdd": 30000 }
+        ]
+      },
+      "images": [
+        "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=400&fit=crop",
+        "https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=400&h=400&fit=crop"
+      ],
+      "emiPlans": [
+        { "tenure": 3, "interestRate": 0, "processingFee": 499 },
+        { "tenure": 6, "interestRate": 0, "processingFee": 499 },
+        { "tenure": 9, "interestRate": 0, "processingFee": 499 },
+        { "tenure": 12, "interestRate": 0, "processingFee": 499 },
+        { "tenure": 18, "interestRate": 8, "processingFee": 0 },
+        { "tenure": 24, "interestRate": 8, "processingFee": 0 }
+      ],
+      "specs": {
+        "Display": "13-inch Ultra Retina XDR OLED",
+        "Processor": "Apple M4 chip",
+        "Camera": "12MP Wide + LiDAR Scanner",
+        "Battery": "Up to 10 hours",
+        "OS": "iPadOS 18"
+      }
+    }
+  ]
+}
