@@ -4,12 +4,6 @@
 
 ---
 
-## 📸 Interactive Demo Preview
-
-![1Fi Marketplace Interactive Demo](./docs/screenshots/marketplace_testing_1788841519867.webp)
-
----
-
 ## 📑 Table of Contents
 
 1. [Assignment Overview & Objectives](#-assignment-overview--objectives)
@@ -18,10 +12,9 @@
 4. [Design Language & Brand Consistency](#-design-language--brand-consistency)
 5. [Architecture & Technical Implementation](#-architecture--technical-implementation)
 6. [Dynamic Data Layer (Zero Hardcoding)](#-dynamic-data-layer-zero-hardcoding)
-7. [Screenshots & Visual Tour](#-screenshots--visual-tour)
-8. [Getting Started & Local Setup](#-getting-started--local-setup)
-9. [Verification, Testing & Build Status](#-verification-testing--build-status)
-10. [Project Directory Structure](#-project-directory-structure)
+7. [Getting Started & Local Setup](#-getting-started--local-setup)
+8. [Verification, Testing & Build Status](#-verification-testing--build-status)
+9. [Project Directory Structure](#-project-directory-structure)
 
 ---
 
@@ -221,18 +214,6 @@ $$\text{Monthly EMI} = \frac{P \times r \times (1+r)^n}{(1+r)^n - 1}$$
 
 - Automatically re-evaluates principal when the user changes storage tiers (e.g., upgrading from 256GB to 512GB).
 - Re-calculates processing fees, total interest, and net payable amounts in real-time.
-
----
-
-## 📷 Screenshots & Visual Tour
-
-| Screen | Description |
-| :--- | :--- |
-| ![Home Page](./docs/screenshots/home_page_1788841573330.png) | **1Fi Home Screen**<br>Landing screen introducing LAMF shopping with 1Fi value props and primary CTA. |
-| ![Shop Page](./docs/screenshots/shop_page_1788841608678.png) | **Shop Page & Marketplace Tab**<br>3-tab selector (`Top Brands`, `Nearby Stores`, `1Fi Marketplace`), dynamic category filters, and product grid. |
-| ![Product Detail Page](./docs/screenshots/product_detail_page_1788841650143.png) | **Product Detail & Variants**<br>Product photography, tags, interactive color swatches, and storage tier selectors. |
-| ![EMI Plans & Breakdown](./docs/screenshots/product_detail_emi_plans_1788841660353.png) | **Interactive EMI Financing**<br>Tenure options grid, No-Cost EMI indicators, cost breakdown summary, and sticky CTA. |
-| ![Product Specs & Accordion](./docs/screenshots/product_detail_specs_1788841672290.png) | **Technical Specifications**<br>Collapsible hardware specs accordion and trust assurances. |
 
 ---
 
